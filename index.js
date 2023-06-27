@@ -1,5 +1,13 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  const checkedNumbers = {};
+
+  for(const number of array){
+    const comp = target - number;
+    if (comp in checkedNumbers) return true;
+    checkedNumbers[number] = true;
+  }
+  return false
 }
 
 /* 
@@ -8,6 +16,9 @@ function hasTargetSum(array, target) {
 
 /* 
   Add your pseudocode here
+  if two integers in array add to target
+  return true
+  else return false
 */
 
 /*
